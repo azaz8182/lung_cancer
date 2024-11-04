@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 # Load the trained model
-model_path = 'heart.pkl'
+model_path = 'cancer.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
