@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Heart Disease Prediction</h2>
+        <form action="/predict" method="post">
+
+            <label for="GENDER">Gender(Male or Female):</label>
+            <input type="character" name="GENDER" required>
+            
+            <label for="AGE">Age:</label>
+            <input type="number" name="AGE" required>
+            
+            <label for="SMOKING">Smoking(Yes or No):</label>
+            <input type="character" name="SMOKING" required>
+
+            <label for="YELLOW_FINGERS">Yellow Fingers (Yes or No):</label>
+            <input type="character" name="YELLOW_FINGERS" required>
+
+            <label for="ANXIETY">Anxiety (Yes or No):</label>
+            <input type="character" name="ANXIETY" required>
+
+            <label for="PEER_PRESSURE">Peer Pressure (Yes or No):</label>
+            <input type="character" name="PEER_PRESSURE" required>
+
+            <label for="CHRONIC_DISEASE">Chronic Disease (Yes or No):</label>
+            <input type="character" name="CHRONIC_DISEASE" required>
+
+            <label for="FATIGUE">Fatigue (Yes or No):</label>
+            <input type="character" name="FATIGUE" required>
+
+            <label for="ALLERGY">Allergy (Yes or No):</label>
+            <input type="character" name="ALLERGY" required>
+
+            <label for="WHEEZING">Wheezing (Yes or No):</label>
+            <input type="character"  name="WHEEZING" required>
+
+            <label for="ALCOHOL_CONSUMING">Alchohol Consuming (Yes or No):</label>
+            <input type="character" name="ALCOHOL_CONSUMING" required>
+
+            <label for="COUGHING">Coughing (Yes or No):</label>
+            <input type="character" name="COUGHING" required>
+
+            <label for="SHORTNESS_OF_BREATH">Shortness Of Breath (Yes or No):</label>
+            <input type="character" name="SHORTNESS_OF_BREATH" required>
+
+            <label for="SWALLOWING_DIFFICULTY">Swallowing Difficulty (Yes or No):</label>
+            <input type="character" name="SWALLOWING_DIFFICULTY" required>
+
+            <label for="CHEST_PAIN">Chest Pain (Yes or No):</label>
+            <input type="character" name="CHEST_PAIN" required>
+
+
+             <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
