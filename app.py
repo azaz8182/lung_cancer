@@ -8,7 +8,7 @@ model_path = 'cancer.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
-app=Flask(__name__,template_folder='Templates')
+app=Flask(__name__,template_folder='templates')
 
 @app.route('/')
 def home():
