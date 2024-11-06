@@ -43,7 +43,7 @@ def predict():
     prediction =model.predict(final_features)
     #prediction.replace(to_replace ={0:'Not Have Heart Disease',1:'Have Heart Disease'},inplace=True)
     output = prediction[0]
-    return render_template('index.html', prediction_text='You not have lung cancer' if output ==0 else 'You have lung cancer')
+    return render_template('index.html', prediction_text='You not have lung cancer' if output ==1 else 'You have lung cancer')
 
     #return render_template('index.html', prediction_text='You {}'.format(output))
 
